@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectSet;
@@ -19,23 +20,23 @@ import com.esotericsoftware.spine.utils.SkeletonDrawable;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.SpineThemedHorror.*;
+import static com.ray3k.template.Resources.SpineBoy.*;
 
-public class ThemedHorrorScreen extends JamScreen {
+public class ConclusionScreen extends JamScreen {
     private Stage stage;
     private Array<SpineDrawable> spineDrawables;
-    private final static Color BG_COLOR = new Color(Color.BLACK);
+    private final static Color BG_COLOR = new Color(Color.WHITE);
     private ObjectSet<Sound> sounds;
     
     @Override
     public void show() {
         super.show();
-        
+
         spineDrawables = new Array<>();
         sounds = new ObjectSet<>();
-    
+        
         var spineDrawable = new SpineDrawable(skeletonRenderer, skeletonData, animationData);
-        spineDrawable.getAnimationState().setAnimation(0, animationStand, false);
+        spineDrawable.getAnimationState().setAnimation(0, animationAnimation, false);
         spineDrawable.getAnimationState().apply(spineDrawable.getSkeleton());
         spineDrawable.setCrop(0, 0, 1024, 576);
         spineDrawables.add(spineDrawable);
@@ -45,22 +46,32 @@ public class ThemedHorrorScreen extends JamScreen {
         
         Table root = new Table();
         root.setFillParent(true);
+        root.pad(30);
         stage.addActor(root);
+    
+        var label = new Label("An end to misery", skin);
+        label.setColor(Color.BLACK);
+        root.add(label);
         
+        root.row();
         Image image = new Image(spineDrawable);
         image.setScaling(Scaling.fit);
         root.add(image).grow();
-    
-        spineDrawable.getAnimationState().setAnimation(0, animationAnimation, false);
+        spineDrawable.getAnimationState().setAnimation(0, animationAnimation, true);
         
+        root.row();
+        label = new Label("CLICK TO CONTINUE", skin);
+        label.setColor(Color.BLACK);
+        root.add(label);
+    
         spineDrawable.getAnimationState().addListener(new AnimationState.AnimationStateAdapter() {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationAnimation) {
-                    core.transition(new Chapter1Screen());
+//                    core.transition(new LogoScreen());
                 }
             }
-            
+    
             @Override
             public void event(AnimationState.TrackEntry entry, Event event) {
                 if (event.getData().getAudioPath() != null && !event.getData().getAudioPath().equals("")) {
@@ -74,13 +85,13 @@ public class ThemedHorrorScreen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new Chapter1Screen());
+                core.transition(new SantaConclusionScreen());
                 return true;
             }
-            
+    
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new Chapter1Screen());
+                core.transition(new SantaConclusionScreen());
                 return true;
             }
         });

@@ -312,12 +312,6 @@ public class Resources {
         SpineSantaHead.eventSfxChapter3 = SpineSantaHead.skeletonData.findEvent("sfx/chapter3");
         SpineSantaHead.eventSfxChapter4 = SpineSantaHead.skeletonData.findEvent("sfx/chapter4");
         SpineSantaHead.eventSfxConclusion = SpineSantaHead.skeletonData.findEvent("sfx/conclusion");
-        SpineSantaHead.eventSfxGameover1 = SpineSantaHead.skeletonData.findEvent("sfx/gameover1");
-        SpineSantaHead.eventSfxGameover2 = SpineSantaHead.skeletonData.findEvent("sfx/gameover2");
-        SpineSantaHead.eventSfxGameover3 = SpineSantaHead.skeletonData.findEvent("sfx/gameover3");
-        SpineSantaHead.eventSfxGameover4 = SpineSantaHead.skeletonData.findEvent("sfx/gameover4");
-        SpineSantaHead.eventSfxGameover5 = SpineSantaHead.skeletonData.findEvent("sfx/gameover5");
-        SpineSantaHead.eventSfxGameover6 = SpineSantaHead.skeletonData.findEvent("sfx/gameover6");
         SpineSantaHead.boneRoot = SpineSantaHead.skeletonData.findBone("root");
         SpineSantaHead.boneHead = SpineSantaHead.skeletonData.findBone("head");
         SpineSantaHead.slotWhite = SpineSantaHead.skeletonData.findSlot("white");
@@ -879,18 +873,6 @@ public class Resources {
         public static EventData eventSfxChapter4;
 
         public static EventData eventSfxConclusion;
-
-        public static EventData eventSfxGameover1;
-
-        public static EventData eventSfxGameover2;
-
-        public static EventData eventSfxGameover3;
-
-        public static EventData eventSfxGameover4;
-
-        public static EventData eventSfxGameover5;
-
-        public static EventData eventSfxGameover6;
 
         public static BoneData boneRoot;
 

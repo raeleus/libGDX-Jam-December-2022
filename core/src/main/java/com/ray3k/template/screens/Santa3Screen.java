@@ -19,9 +19,9 @@ import com.esotericsoftware.spine.utils.SkeletonDrawable;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.SpineThemedHorror.*;
+import static com.ray3k.template.Resources.SpineSantaHead.*;
 
-public class ThemedHorrorScreen extends JamScreen {
+public class Santa3Screen extends JamScreen {
     private Stage stage;
     private Array<SpineDrawable> spineDrawables;
     private final static Color BG_COLOR = new Color(Color.BLACK);
@@ -35,7 +35,6 @@ public class ThemedHorrorScreen extends JamScreen {
         sounds = new ObjectSet<>();
     
         var spineDrawable = new SpineDrawable(skeletonRenderer, skeletonData, animationData);
-        spineDrawable.getAnimationState().setAnimation(0, animationStand, false);
         spineDrawable.getAnimationState().apply(spineDrawable.getSkeleton());
         spineDrawable.setCrop(0, 0, 1024, 576);
         spineDrawables.add(spineDrawable);
@@ -51,13 +50,13 @@ public class ThemedHorrorScreen extends JamScreen {
         image.setScaling(Scaling.fit);
         root.add(image).grow();
     
-        spineDrawable.getAnimationState().setAnimation(0, animationAnimation, false);
+        spineDrawable.getAnimationState().setAnimation(0, animationSaySfxChapter3, false);
         
         spineDrawable.getAnimationState().addListener(new AnimationState.AnimationStateAdapter() {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
-                if (entry.getAnimation() == animationAnimation) {
-                    core.transition(new Chapter1Screen());
+                if (entry.getAnimation() == animationSaySfxChapter3) {
+                    core.transition(new Chapter4Screen());
                 }
             }
             
@@ -74,13 +73,13 @@ public class ThemedHorrorScreen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new Chapter1Screen());
+                core.transition(new Chapter4Screen());
                 return true;
             }
             
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new Chapter1Screen());
+                core.transition(new Chapter4Screen());
                 return true;
             }
         });
