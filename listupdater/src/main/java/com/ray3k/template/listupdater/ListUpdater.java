@@ -365,13 +365,13 @@ public class ListUpdater {
     private static class LameDuckAttachmentLoader implements AttachmentLoader {
         @Override
         public RegionAttachment newRegionAttachment(com.esotericsoftware.spine.Skin skin, String name,
-                                                    String path) {
+                                                    String path, Sequence sequence) {
             return new RegionAttachment(name);
         }
         
         @Override
         public MeshAttachment newMeshAttachment(com.esotericsoftware.spine.Skin skin, String name,
-                                                String path) {
+                                                String path, Sequence sequence) {
             return new MeshAttachment(name);
         }
         

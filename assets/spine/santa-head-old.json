@@ -1,0 +1,59 @@
+{
+"skeleton": { "hash": "C8JiTj2X6Xs", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "white", "bone": "root", "attachment": "game/white" },
+	{ "name": "head", "bone": "root", "attachment": "game/santa-head" },
+	{ "name": "mouth", "bone": "root", "attachment": "game/santa-mouth-a" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"head": {
+				"game/santa-head": { "x": 495.2, "y": 291.25, "width": 340, "height": 529 },
+				"game/santa-head-crazy": { "x": 495.2, "y": 291.25, "width": 341, "height": 529 }
+			},
+			"mouth": {
+				"game/santa-mouth-a": { "x": 516.19, "y": 203.35, "width": 91, "height": 33 },
+				"game/santa-mouth-b": { "x": 516.19, "y": 205.98, "width": 63, "height": 25 },
+				"game/santa-mouth-c": { "x": 516.19, "y": 199.42, "width": 71, "height": 47 },
+				"game/santa-mouth-d": { "x": 516.19, "y": 199.42, "width": 78, "height": 63 },
+				"game/santa-mouth-e": { "x": 516.19, "y": 199.42, "width": 45, "height": 60 },
+				"game/santa-mouth-f": { "x": 516.19, "y": 204.67, "width": 31, "height": 33 },
+				"game/santa-mouth-g": { "x": 516.19, "y": 207.29, "width": 61, "height": 22 },
+				"game/santa-mouth-h": { "x": 516.19, "y": 202.04, "width": 66, "height": 44 }
+			},
+			"white": {
+				"game/white": {
+					"color": "faaaaaff",
+					"x": 512,
+					"y": 288,
+					"scaleX": 1024,
+					"scaleY": 576,
+					"width": 1,
+					"height": 1
+				}
+			}
+		}
+	}
+],
+"events": {
+	"sfx/chapter1": { "audio": "sfx/chapter1.wav" },
+	"sfx/chapter2": { "audio": "sfx/chapter2.wav" },
+	"sfx/chapter3": { "audio": "sfx/chapter3.wav" },
+	"sfx/chapter4": { "audio": "sfx/chapter4.wav" },
+	"sfx/conclusion": { "audio": "sfx/conclusion.wav" },
+	"sfx/gameover1": { "audio": "sfx/gameover1.wav" },
+	"sfx/gameover2": { "audio": "sfx/gameover2.wav" },
+	"sfx/gameover3": { "audio": "sfx/gameover3.wav" },
+	"sfx/gameover4": { "audio": "sfx/gameover4.wav" },
+	"sfx/gameover5": { "audio": "sfx/gameover5.wav" },
+	"sfx/gameover6": { "audio": "sfx/gameover6.wav" }
+},
+"animations": {
+	"animation": {}
+}
+}

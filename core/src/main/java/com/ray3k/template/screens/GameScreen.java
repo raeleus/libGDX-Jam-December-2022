@@ -54,30 +54,6 @@ public class GameScreen extends JamScreen {
         
         fpsLabel = new Label("test", skin);
         root.add(fpsLabel);
-        
-        stage.addListener(new InputListener() {
-            @Override
-            public boolean keyDown(InputEvent event, int keycode) {
-                if (!paused && keycode == Keys.ESCAPE) {
-                    paused = true;
-                
-                    DialogPause dialogPause = new DialogPause(GameScreen.this);
-                    dialogPause.show(stage);
-                    dialogPause.addListener(new PauseListener() {
-                        @Override
-                        public void resume() {
-                            paused = false;
-                        }
-                    
-                        @Override
-                        public void quit() {
-                            core.transition(new MenuScreen());
-                        }
-                    });
-                }
-                return super.keyDown(event, keycode);
-            }
-        });
     
         stage.addListener(new DebugListener());
     

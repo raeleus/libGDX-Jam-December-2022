@@ -1,0 +1,63 @@
+{
+"skeleton": { "hash": "kH+YXXi54E8", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "boy", "parent": "root", "length": 103.68, "x": 516.79, "y": 272.14 },
+	{ "name": "boy2", "parent": "root", "length": 103.68, "x": 516.79, "y": 272.14 }
+],
+"slots": [
+	{ "name": "white", "bone": "root", "attachment": "game/white" },
+	{ "name": "boy", "bone": "boy", "color": "ffffff80", "attachment": "game/boy" },
+	{ "name": "boy2", "bone": "boy2", "color": "ffffff80", "attachment": "game/boy" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"boy": {
+				"game/boy": { "x": -13.57, "y": 9.69, "width": 159, "height": 398 }
+			},
+			"boy2": {
+				"game/boy": { "x": -13.57, "y": 9.69, "width": 159, "height": 398 }
+			},
+			"white": {
+				"game/white": { "x": 512, "y": 288, "scaleX": 1024, "scaleY": 576, "width": 1, "height": 1 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"boy2": {
+				"translate": [
+					{
+						"curve": [ 0.157, 0.12, 0.178, 10.73, 0.089, 0, 0.178, 7.87 ]
+					},
+					{
+						"time": 0.2667,
+						"x": 10.66,
+						"y": 7.87,
+						"curve": [ 0.404, 10.54, 0.422, 0, 0.344, 7.87, 0.422, 0 ]
+					},
+					{ "time": 0.5 }
+				]
+			},
+			"boy": {
+				"translate": [
+					{
+						"x": 10.49,
+						"y": 8.72,
+						"curve": [ 0.089, 10.49, 0.178, 0, 0.157, 8.63, 0.178, -0.06 ]
+					},
+					{
+						"time": 0.2667,
+						"curve": [ 0.344, 0, 0.422, 10.49, 0.404, 0.09, 0.422, 8.72 ]
+					},
+					{ "time": 0.5, "x": 10.49, "y": 8.72 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,145 @@
+{
+"skeleton": { "hash": "RU8N7YrN6fc", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/game-over-tooth2", "parent": "root", "length": 81.76, "rotation": 3.34, "x": 518.52, "y": 243.16 },
+	{ "name": "game/game-over-clamp", "parent": "game/game-over-tooth2", "length": 112.63, "rotation": -94.6, "x": 8.6, "y": 104.86 }
+],
+"slots": [
+	{ "name": "game/white", "bone": "root", "attachment": "game/white" },
+	{ "name": "game/game-over-tooth", "bone": "root", "attachment": "game/game-over-tooth" },
+	{ "name": "game/game-over-tooth2", "bone": "game/game-over-tooth2", "attachment": "game/game-over-tooth" },
+	{ "name": "game/game-over-tooth3", "bone": "root", "attachment": "game/game-over-tooth" },
+	{ "name": "game/game-over-gum", "bone": "root", "attachment": "game/game-over-gum" },
+	{ "name": "game/game-over-clamp", "bone": "game/game-over-clamp", "attachment": "game/game-over-clamp" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/game-over-clamp": {
+				"game/game-over-clamp": { "x": 6.38, "y": -8.52, "rotation": 91.26, "width": 132, "height": 197 }
+			},
+			"game/game-over-gum": {
+				"game/game-over-gum": { "x": 512.34, "y": 192.43, "width": 344, "height": 87 }
+			},
+			"game/game-over-tooth": {
+				"game/game-over-tooth": { "x": 408.45, "y": 224.59, "width": 93, "height": 107 }
+			},
+			"game/game-over-tooth2": {
+				"game/game-over-tooth": { "x": -5.73, "y": -13.36, "rotation": -3.34, "width": 93, "height": 107 }
+			},
+			"game/game-over-tooth3": {
+				"game/game-over-tooth": { "x": 621.23, "y": 232.03, "width": 93, "height": 107 }
+			},
+			"game/white": {
+				"game/white": {
+					"color": "353535ff",
+					"x": 512,
+					"y": 288,
+					"scaleX": 1024,
+					"scaleY": 576,
+					"width": 1,
+					"height": 1
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation00": {
+		"slots": {
+			"game/game-over-clamp": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.6667, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"game/game-over-clamp": {
+				"translate": [
+					{ "x": 8.01, "y": 116.11 },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"animation01": {
+		"bones": {
+			"game/game-over-clamp": {
+				"translate": [
+					{}
+				]
+			},
+			"game/game-over-tooth2": {
+				"rotate": [
+					{},
+					{ "time": 0.2667, "value": 2.98 },
+					{ "time": 0.5 }
+				]
+			}
+		}
+	},
+	"animation02": {
+		"bones": {
+			"game/game-over-clamp": {
+				"translate": [
+					{}
+				]
+			},
+			"game/game-over-tooth2": {
+				"rotate": [
+					{ "value": -12.83 },
+					{ "time": 0.2667, "value": 5.7 },
+					{ "time": 0.5, "value": -12.83 }
+				]
+			}
+		}
+	},
+	"animation03": {
+		"bones": {
+			"game/game-over-clamp": {
+				"translate": [
+					{}
+				]
+			},
+			"game/game-over-tooth2": {
+				"rotate": [
+					{ "value": -25.51 },
+					{ "time": 0.1667, "value": 19.55 },
+					{ "time": 0.3333, "value": -25.51 }
+				]
+			}
+		}
+	},
+	"animation04": {
+		"bones": {
+			"game/game-over-tooth2": {
+				"translate": [
+					{
+						"curve": [ 0.222, 0, 0.444, 0, 0.222, 0, 0.444, 157.15 ]
+					},
+					{ "time": 0.6667, "y": 157.15 }
+				]
+			}
+		}
+	},
+	"stand": {
+		"slots": {
+			"game/game-over-clamp": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"game/game-over-clamp": {
+				"translate": [
+					{ "x": 8.01, "y": 116.11 }
+				]
+			}
+		}
+	}
+}
+}
