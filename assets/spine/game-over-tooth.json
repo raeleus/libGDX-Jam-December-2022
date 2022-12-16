@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "RU8N7YrN6fc", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "c7p2Q1AqLZU", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "game/game-over-tooth2", "parent": "root", "length": 81.76, "rotation": 3.34, "x": 518.52, "y": 243.16 },
@@ -46,6 +46,9 @@
 		}
 	}
 ],
+"events": {
+	"bgm/gameoverscream": { "audio": "bgm/gameoverscream.mp3" }
+},
 "animations": {
 	"animation00": {
 		"slots": {
@@ -120,10 +123,14 @@
 					{
 						"curve": [ 0.222, 0, 0.444, 0, 0.222, 0, 0.444, 157.15 ]
 					},
-					{ "time": 0.6667, "y": 157.15 }
+					{ "time": 0.6667, "y": 157.15, "curve": "stepped" },
+					{ "time": 2.3333, "y": 157.15 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameoverscream" }
+		]
 	},
 	"stand": {
 		"slots": {

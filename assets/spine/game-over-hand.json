@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "wVsTSbCdGbY",
+	"hash": "CwULtWKUmCs",
 	"spine": "4.1.17",
 	"y": -16.24,
 	"width": 1024,
@@ -11,16 +11,7 @@
 "bones": [
 	{ "name": "root" },
 	{ "name": "hammer", "parent": "root", "length": 422.06, "rotation": 94.32, "x": 858.82, "y": 183.77 },
-	{
-		"name": "puddle",
-		"parent": "root",
-		"length": 294.51,
-		"rotation": -0.24,
-		"x": 399.73,
-		"y": 232.03,
-		"scaleX": 0,
-		"scaleY": 0
-	},
+	{ "name": "puddle", "parent": "root", "length": 294.51, "rotation": -0.24, "x": 399.73, "y": 232.03 },
 	{ "name": "hand", "parent": "root", "length": 157.16, "rotation": -0.45, "x": 392.31, "y": 236.98 }
 ],
 "slots": [
@@ -60,115 +51,13 @@
 		}
 	}
 ],
+"events": {
+	"bgm/gameover2": { "audio": "bgm/gameover1.mp3" },
+	"bgm/gameovermeat2": { "audio": "bgm/gameovermeat.mp3" },
+	"bgm/gameoverscream2": { "audio": "bgm/gameoverscream.mp3" }
+},
 "animations": {
-	"hurt00": {
-		"slots": {
-			"hand": {
-				"rgba2": [
-					{ "light": "ffffffff", "dark": "000000" },
-					{ "time": 0.5, "light": "ff0000ff", "dark": "ff0000" },
-					{ "time": 1, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
-					{ "time": 2, "light": "ffffffff", "dark": "000000" }
-				]
-			}
-		},
-		"bones": {
-			"hand": {
-				"scale": [
-					{},
-					{ "time": 0.5, "x": 1.062, "y": 1.062 },
-					{ "time": 1 }
-				]
-			}
-		}
-	},
-	"hurt01": {
-		"slots": {
-			"hand": {
-				"rgba2": [
-					{ "light": "ffffffff", "dark": "000000" },
-					{ "time": 0.5, "light": "ff0000ff", "dark": "ff0000" },
-					{ "time": 0.8333, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
-					{ "time": 1.2, "light": "ffffffff", "dark": "000000" }
-				]
-			}
-		},
-		"bones": {
-			"hand": {
-				"scale": [
-					{},
-					{ "time": 0.5, "x": 1.062, "y": 1.062 },
-					{ "time": 0.8333 }
-				]
-			}
-		}
-	},
-	"hurt02": {
-		"slots": {
-			"hand": {
-				"rgba2": [
-					{ "light": "ffffffff", "dark": "000000" },
-					{ "time": 0.2667, "light": "ff0000ff", "dark": "ff0000" },
-					{ "time": 0.4667, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
-					{ "time": 0.6667, "light": "ffffffff", "dark": "000000" }
-				]
-			}
-		},
-		"bones": {
-			"hand": {
-				"scale": [
-					{},
-					{ "time": 0.2667, "x": 1.138, "y": 1.138 },
-					{ "time": 0.4667 }
-				]
-			}
-		}
-	},
-	"hurt03": {
-		"slots": {
-			"hand": {
-				"rgba2": [
-					{ "light": "340031ff", "dark": "3900ff" },
-					{ "time": 0.2, "light": "ff0000ff", "dark": "ff0000" },
-					{ "time": 0.4, "light": "340031ff", "dark": "3900ff" }
-				]
-			}
-		},
-		"bones": {
-			"hand": {
-				"scale": [
-					{},
-					{ "time": 0.2, "x": 1.138, "y": 1.138 },
-					{ "time": 0.4 }
-				]
-			}
-		}
-	},
-	"hurt04": {
-		"slots": {
-			"hand": {
-				"rgba2": [
-					{ "light": "340031ff", "dark": "000000" }
-				]
-			}
-		},
-		"bones": {
-			"hand": {
-				"scale": [
-					{ "x": 0.906, "y": 0.906 }
-				]
-			},
-			"puddle": {
-				"scale": [
-					{
-						"curve": [ 1.358, 45000.547, 1.914, 100000, 1.358, 45000.547, 1.914, 100000 ]
-					},
-					{ "time": 4.7, "x": 100000, "y": 100000 }
-				]
-			}
-		}
-	},
-	"position": {
+	"goToPosition": {
 		"slots": {
 			"hammer": {
 				"rgba": [
@@ -194,6 +83,148 @@
 					},
 					{ "time": 0.6667 }
 				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"hurt00": {
+		"slots": {
+			"hand": {
+				"rgba2": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.5, "light": "ff0000ff", "dark": "ff0000" },
+					{ "time": 1, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
+					{ "time": 2, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		},
+		"bones": {
+			"hand": {
+				"scale": [
+					{},
+					{ "time": 0.5, "x": 1.062, "y": 1.062 },
+					{ "time": 1 }
+				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"hurt01": {
+		"slots": {
+			"hand": {
+				"rgba2": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.5, "light": "ff0000ff", "dark": "ff0000" },
+					{ "time": 0.8333, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
+					{ "time": 1.2, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		},
+		"bones": {
+			"hand": {
+				"scale": [
+					{},
+					{ "time": 0.5, "x": 1.062, "y": 1.062 },
+					{ "time": 0.8333 }
+				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"hurt02": {
+		"slots": {
+			"hand": {
+				"rgba2": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ff0000ff", "dark": "ff0000" },
+					{ "time": 0.4667, "light": "ffffffff", "dark": "000000", "curve": "stepped" },
+					{ "time": 0.6667, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		},
+		"bones": {
+			"hand": {
+				"scale": [
+					{},
+					{ "time": 0.2667, "x": 1.138, "y": 1.138 },
+					{ "time": 0.4667 }
+				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"hurt03": {
+		"slots": {
+			"hand": {
+				"rgba2": [
+					{ "light": "340031ff", "dark": "3900ff" },
+					{ "time": 0.2, "light": "ff0000ff", "dark": "ff0000" },
+					{ "time": 0.4, "light": "340031ff", "dark": "3900ff" }
+				]
+			}
+		},
+		"bones": {
+			"hand": {
+				"scale": [
+					{},
+					{ "time": 0.2, "x": 1.138, "y": 1.138 },
+					{ "time": 0.4 }
+				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"hurt04": {
+		"slots": {
+			"hand": {
+				"rgba2": [
+					{ "light": "340031ff", "dark": "000000" }
+				]
+			}
+		},
+		"bones": {
+			"hand": {
+				"scale": [
+					{ "x": 0.906, "y": 0.906 }
+				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 },
+					{ "time": 4.7 }
+				]
+			}
+		},
+		"events": [
+			{ "name": "bgm/gameoverscream2" }
+		]
+	},
+	"position": {
+		"bones": {
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
 			}
 		}
 	},
@@ -213,7 +244,10 @@
 					{ "time": 0.6 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameovermeat2" }
+		]
 	},
 	"stand": {
 		"slots": {
@@ -231,8 +265,16 @@
 				"translate": [
 					{ "x": 113.84, "y": -86.62 }
 				]
+			},
+			"puddle": {
+				"scale": [
+					{ "x": 0, "y": 0 }
+				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameover2" }
+		]
 	}
 }
 }

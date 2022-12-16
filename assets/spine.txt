@@ -11,4 +11,5 @@ spine/ms-fart.json
 spine/ray3k.json
 spine/santa-head-old.json
 spine/santa-head.json
+spine/simon.json
 spine/themed-horror.json

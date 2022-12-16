@@ -1,2 +1,15 @@
 bgm/audio-sample.mp3
+bgm/gameover1.mp3
+bgm/gameover2.mp3
+bgm/gameover3.mp3
+bgm/gameover4.mp3
+bgm/gameover5.mp3
+bgm/gameover6.mp3
+bgm/gameoverbreathing.mp3
+bgm/gameovercry.mp3
+bgm/gameoverlever.mp3
+bgm/gameovermeat.mp3
+bgm/gameoversaw.mp3
+bgm/gameoverscream.mp3
+bgm/gameovershot.mp3
 bgm/menu.mp3

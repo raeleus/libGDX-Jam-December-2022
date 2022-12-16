@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "rwIJbJv1f0A",
+	"hash": "NOx50+QmZF8",
 	"spine": "4.1.17",
 	"x": 0.79,
 	"y": -0.5,
@@ -65,6 +65,10 @@
 		}
 	}
 ],
+"events": {
+	"bgm/gameover4": { "audio": "bgm/gameover4.mp3" },
+	"bgm/gameoverscream": { "audio": "bgm/gameoverscream.mp3" }
+},
 "animations": {
 	"eye-movement": {
 		"bones": {
@@ -185,10 +189,14 @@
 		"bones": {
 			"game/game-over-syringe": {
 				"translate": [
-					{ "y": -232.57 }
+					{ "y": -232.57, "curve": "stepped" },
+					{ "time": 2.3333, "y": -232.57 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameoverscream" }
+		]
 	}
 }
 }

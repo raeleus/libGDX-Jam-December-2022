@@ -1,0 +1,126 @@
+{
+"skeleton": { "hash": "/qtL5lDvNis", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/simon-background", "bone": "root", "attachment": "game/simon-background" },
+	{ "name": "game/simon-bottom", "bone": "root" },
+	{ "name": "game/simon-left", "bone": "root" },
+	{ "name": "game/simon-right", "bone": "root" },
+	{ "name": "game/simon-top", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/simon-background": {
+				"game/simon-background": { "x": 512, "y": 288, "width": 1024, "height": 576 }
+			},
+			"game/simon-bottom": {
+				"game/simon-bottom": { "x": 524.16, "y": 157.99, "width": 357, "height": 260 }
+			},
+			"game/simon-left": {
+				"game/simon-left": { "x": 382.38, "y": 293.68, "width": 264, "height": 405 }
+			},
+			"game/simon-right": {
+				"game/simon-right": { "x": 651.14, "y": 295.41, "width": 255, "height": 402 }
+			},
+			"game/simon-top": {
+				"game/simon-top": { "x": 520.67, "y": 453.24, "width": 396, "height": 278 }
+			}
+		}
+	}
+],
+"animations": {
+	"bottom": {
+		"slots": {
+			"game/simon-bottom": {
+				"attachment": [
+					{ "name": "game/simon-bottom" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"bottom-quick": {
+		"slots": {
+			"game/simon-bottom": {
+				"attachment": [
+					{ "name": "game/simon-bottom" },
+					{ "time": 0.1667 }
+				]
+			}
+		}
+	},
+	"left": {
+		"slots": {
+			"game/simon-left": {
+				"attachment": [
+					{ "name": "game/simon-left" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"left-quick": {
+		"slots": {
+			"game/simon-left": {
+				"attachment": [
+					{ "name": "game/simon-left" },
+					{ "time": 0.1667 }
+				]
+			}
+		}
+	},
+	"right": {
+		"slots": {
+			"game/simon-right": {
+				"attachment": [
+					{ "name": "game/simon-right" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"right-quick": {
+		"slots": {
+			"game/simon-right": {
+				"attachment": [
+					{ "name": "game/simon-right" },
+					{ "time": 0.1667 }
+				]
+			}
+		}
+	},
+	"stand": {
+		"slots": {
+			"game/simon-top": {
+				"attachment": [
+					{}
+				]
+			}
+		}
+	},
+	"top": {
+		"slots": {
+			"game/simon-top": {
+				"attachment": [
+					{ "name": "game/simon-top" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"top-quick": {
+		"slots": {
+			"game/simon-top": {
+				"attachment": [
+					{ "name": "game/simon-top" },
+					{ "time": 0.1667 }
+				]
+			}
+		}
+	}
+}
+}

@@ -4,12 +4,6 @@ sfx/chapter3.mp3
 sfx/chapter4.mp3
 sfx/click.mp3
 sfx/conclusion.mp3
-sfx/gameover1.mp3
-sfx/gameover2.mp3
-sfx/gameover3.mp3
-sfx/gameover4.mp3
-sfx/gameover5.mp3
-sfx/gameover6.mp3
 sfx/libgdx00.mp3
 sfx/libgdx01.mp3
 sfx/libgdx02.mp3

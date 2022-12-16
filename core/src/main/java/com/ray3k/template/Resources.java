@@ -4,24 +4,9 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.List;
-import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
-import com.badlogic.gdx.scenes.scene2d.ui.SelectBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Slider;
-import com.badlogic.gdx.scenes.scene2d.ui.SplitPane;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.ui.TextTooltip;
-import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
-import com.badlogic.gdx.scenes.scene2d.ui.Tree;
-import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.esotericsoftware.spine.Animation;
 import com.esotericsoftware.spine.AnimationStateData;
 import com.esotericsoftware.spine.BoneData;
@@ -47,18 +32,6 @@ public class Resources {
 
     public static Sound sfx_conclusion;
 
-    public static Sound sfx_gameover1;
-
-    public static Sound sfx_gameover2;
-
-    public static Sound sfx_gameover3;
-
-    public static Sound sfx_gameover4;
-
-    public static Sound sfx_gameover5;
-
-    public static Sound sfx_gameover6;
-
     public static Sound sfx_libgdx00;
 
     public static Sound sfx_libgdx01;
@@ -76,6 +49,32 @@ public class Resources {
     public static Sound sfx_themedHorror02;
 
     public static Music bgm_audioSample;
+
+    public static Music bgm_gameover1;
+
+    public static Music bgm_gameover2;
+
+    public static Music bgm_gameover3;
+
+    public static Music bgm_gameover4;
+
+    public static Music bgm_gameover5;
+
+    public static Music bgm_gameover6;
+
+    public static Music bgm_gameoverbreathing;
+
+    public static Music bgm_gameovercry;
+
+    public static Music bgm_gameoverlever;
+
+    public static Music bgm_gameovermeat;
+
+    public static Music bgm_gameoversaw;
+
+    public static Music bgm_gameoverscream;
+
+    public static Music bgm_gameovershot;
 
     public static Music bgm_menu;
 
@@ -119,6 +118,8 @@ public class Resources {
         SpineGameOverEye.animationNeedle02 = SpineGameOverEye.skeletonData.findAnimation("needle02");
         SpineGameOverEye.animationNeedle03 = SpineGameOverEye.skeletonData.findAnimation("needle03");
         SpineGameOverEye.animationNeedle04 = SpineGameOverEye.skeletonData.findAnimation("needle04");
+        SpineGameOverEye.eventBgmGameover4 = SpineGameOverEye.skeletonData.findEvent("bgm/gameover4");
+        SpineGameOverEye.eventBgmGameoverscream = SpineGameOverEye.skeletonData.findEvent("bgm/gameoverscream");
         SpineGameOverEye.boneRoot = SpineGameOverEye.skeletonData.findBone("root");
         SpineGameOverEye.boneGameGameOverSyringe = SpineGameOverEye.skeletonData.findBone("game/game-over-syringe");
         SpineGameOverEye.boneGameGameOverEye = SpineGameOverEye.skeletonData.findBone("game/game-over-eye");
@@ -134,6 +135,7 @@ public class Resources {
         SpineGameOverEye.skinDefault = SpineGameOverEye.skeletonData.findSkin("default");
         SpineGameOverHand.skeletonData = assetManager.get("spine/game-over-hand.json");
         SpineGameOverHand.animationData = assetManager.get("spine/game-over-hand.json-animation");
+        SpineGameOverHand.animationGoToPosition = SpineGameOverHand.skeletonData.findAnimation("goToPosition");
         SpineGameOverHand.animationHurt00 = SpineGameOverHand.skeletonData.findAnimation("hurt00");
         SpineGameOverHand.animationHurt01 = SpineGameOverHand.skeletonData.findAnimation("hurt01");
         SpineGameOverHand.animationHurt02 = SpineGameOverHand.skeletonData.findAnimation("hurt02");
@@ -142,6 +144,9 @@ public class Resources {
         SpineGameOverHand.animationPosition = SpineGameOverHand.skeletonData.findAnimation("position");
         SpineGameOverHand.animationSmack = SpineGameOverHand.skeletonData.findAnimation("smack");
         SpineGameOverHand.animationStand = SpineGameOverHand.skeletonData.findAnimation("stand");
+        SpineGameOverHand.eventBgmGameover2 = SpineGameOverHand.skeletonData.findEvent("bgm/gameover2");
+        SpineGameOverHand.eventBgmGameovermeat2 = SpineGameOverHand.skeletonData.findEvent("bgm/gameovermeat2");
+        SpineGameOverHand.eventBgmGameoverscream2 = SpineGameOverHand.skeletonData.findEvent("bgm/gameoverscream2");
         SpineGameOverHand.boneRoot = SpineGameOverHand.skeletonData.findBone("root");
         SpineGameOverHand.boneHammer = SpineGameOverHand.skeletonData.findBone("hammer");
         SpineGameOverHand.bonePuddle = SpineGameOverHand.skeletonData.findBone("puddle");
@@ -162,6 +167,9 @@ public class Resources {
         SpineGameOverLeg.animationAnimation05 = SpineGameOverLeg.skeletonData.findAnimation("animation05");
         SpineGameOverLeg.animationAnimation06 = SpineGameOverLeg.skeletonData.findAnimation("animation06");
         SpineGameOverLeg.animationStand = SpineGameOverLeg.skeletonData.findAnimation("stand");
+        SpineGameOverLeg.eventBgmGameover2 = SpineGameOverLeg.skeletonData.findEvent("bgm/gameover2");
+        SpineGameOverLeg.eventBgmGameoversaw = SpineGameOverLeg.skeletonData.findEvent("bgm/gameoversaw");
+        SpineGameOverLeg.eventBgmGameoverscream = SpineGameOverLeg.skeletonData.findEvent("bgm/gameoverscream");
         SpineGameOverLeg.boneRoot = SpineGameOverLeg.skeletonData.findBone("root");
         SpineGameOverLeg.boneThigh = SpineGameOverLeg.skeletonData.findBone("thigh");
         SpineGameOverLeg.boneUpperLeg = SpineGameOverLeg.skeletonData.findBone("upper-leg");
@@ -179,6 +187,7 @@ public class Resources {
         SpineGameOverNoose.animationData = assetManager.get("spine/game-over-noose.json-animation");
         SpineGameOverNoose.animationDeath = SpineGameOverNoose.skeletonData.findAnimation("death");
         SpineGameOverNoose.animationWiggle = SpineGameOverNoose.skeletonData.findAnimation("wiggle");
+        SpineGameOverNoose.eventBgmGameoverlever = SpineGameOverNoose.skeletonData.findEvent("bgm/gameoverlever");
         SpineGameOverNoose.boneRoot = SpineGameOverNoose.skeletonData.findBone("root");
         SpineGameOverNoose.boneRope = SpineGameOverNoose.skeletonData.findBone("rope");
         SpineGameOverNoose.boneFriend00 = SpineGameOverNoose.skeletonData.findBone("friend00");
@@ -196,6 +205,8 @@ public class Resources {
         SpineGameOverShoot.animationData = assetManager.get("spine/game-over-shoot.json-animation");
         SpineGameOverShoot.animationSlump = SpineGameOverShoot.skeletonData.findAnimation("slump");
         SpineGameOverShoot.animationWiggle = SpineGameOverShoot.skeletonData.findAnimation("wiggle");
+        SpineGameOverShoot.eventBgmGameover3 = SpineGameOverShoot.skeletonData.findEvent("bgm/gameover3");
+        SpineGameOverShoot.eventBgmGameovershot = SpineGameOverShoot.skeletonData.findEvent("bgm/gameovershot");
         SpineGameOverShoot.boneRoot = SpineGameOverShoot.skeletonData.findBone("root");
         SpineGameOverShoot.boneBone = SpineGameOverShoot.skeletonData.findBone("bone");
         SpineGameOverShoot.boneBone3 = SpineGameOverShoot.skeletonData.findBone("bone3");
@@ -219,6 +230,7 @@ public class Resources {
         SpineGameOverTooth.animationAnimation03 = SpineGameOverTooth.skeletonData.findAnimation("animation03");
         SpineGameOverTooth.animationAnimation04 = SpineGameOverTooth.skeletonData.findAnimation("animation04");
         SpineGameOverTooth.animationStand = SpineGameOverTooth.skeletonData.findAnimation("stand");
+        SpineGameOverTooth.eventBgmGameoverscream = SpineGameOverTooth.skeletonData.findEvent("bgm/gameoverscream");
         SpineGameOverTooth.boneRoot = SpineGameOverTooth.skeletonData.findBone("root");
         SpineGameOverTooth.boneGameGameOverTooth2 = SpineGameOverTooth.skeletonData.findBone("game/game-over-tooth2");
         SpineGameOverTooth.boneGameGameOverClamp = SpineGameOverTooth.skeletonData.findBone("game/game-over-clamp");
@@ -318,6 +330,24 @@ public class Resources {
         SpineSantaHead.slotHead = SpineSantaHead.skeletonData.findSlot("head");
         SpineSantaHead.slotMouth = SpineSantaHead.skeletonData.findSlot("mouth");
         SpineSantaHead.skinDefault = SpineSantaHead.skeletonData.findSkin("default");
+        SpineSimon.skeletonData = assetManager.get("spine/simon.json");
+        SpineSimon.animationData = assetManager.get("spine/simon.json-animation");
+        SpineSimon.animationBottom = SpineSimon.skeletonData.findAnimation("bottom");
+        SpineSimon.animationBottomQuick = SpineSimon.skeletonData.findAnimation("bottom-quick");
+        SpineSimon.animationLeft = SpineSimon.skeletonData.findAnimation("left");
+        SpineSimon.animationLeftQuick = SpineSimon.skeletonData.findAnimation("left-quick");
+        SpineSimon.animationRight = SpineSimon.skeletonData.findAnimation("right");
+        SpineSimon.animationRightQuick = SpineSimon.skeletonData.findAnimation("right-quick");
+        SpineSimon.animationStand = SpineSimon.skeletonData.findAnimation("stand");
+        SpineSimon.animationTop = SpineSimon.skeletonData.findAnimation("top");
+        SpineSimon.animationTopQuick = SpineSimon.skeletonData.findAnimation("top-quick");
+        SpineSimon.boneRoot = SpineSimon.skeletonData.findBone("root");
+        SpineSimon.slotGameSimonBackground = SpineSimon.skeletonData.findSlot("game/simon-background");
+        SpineSimon.slotGameSimonBottom = SpineSimon.skeletonData.findSlot("game/simon-bottom");
+        SpineSimon.slotGameSimonLeft = SpineSimon.skeletonData.findSlot("game/simon-left");
+        SpineSimon.slotGameSimonRight = SpineSimon.skeletonData.findSlot("game/simon-right");
+        SpineSimon.slotGameSimonTop = SpineSimon.skeletonData.findSlot("game/simon-top");
+        SpineSimon.skinDefault = SpineSimon.skeletonData.findSkin("default");
         SpineThemedHorror.skeletonData = assetManager.get("spine/themed-horror.json");
         SpineThemedHorror.animationData = assetManager.get("spine/themed-horror.json-animation");
         SpineThemedHorror.animationAnimation = SpineThemedHorror.skeletonData.findAnimation("animation");
@@ -333,48 +363,14 @@ public class Resources {
         SpineThemedHorror.slotMouth = SpineThemedHorror.skeletonData.findSlot("mouth");
         SpineThemedHorror.skinDefault = SpineThemedHorror.skeletonData.findSkin("default");
         skin_skin = assetManager.get("skin/skin.json");
-        SkinSkinStyles.bClose = skin_skin.get("close", Button.ButtonStyle.class);
-        SkinSkinStyles.bDefault = skin_skin.get("default", Button.ButtonStyle.class);
-        SkinSkinStyles.bPause = skin_skin.get("pause", Button.ButtonStyle.class);
-        SkinSkinStyles.bToggle = skin_skin.get("toggle", Button.ButtonStyle.class);
-        SkinSkinStyles.bStop = skin_skin.get("stop", Button.ButtonStyle.class);
-        SkinSkinStyles.bPlay = skin_skin.get("play", Button.ButtonStyle.class);
-        SkinSkinStyles.cbDefault = skin_skin.get("default", CheckBox.CheckBoxStyle.class);
-        SkinSkinStyles.ibDefault = skin_skin.get("default", ImageButton.ImageButtonStyle.class);
-        SkinSkinStyles.itbDefault = skin_skin.get("default", ImageTextButton.ImageTextButtonStyle.class);
-        SkinSkinStyles.itbRadio = skin_skin.get("radio", ImageTextButton.ImageTextButtonStyle.class);
-        SkinSkinStyles.lSmall = skin_skin.get("small", Label.LabelStyle.class);
         SkinSkinStyles.lDefault = skin_skin.get("default", Label.LabelStyle.class);
-        SkinSkinStyles.lstSelectBox = skin_skin.get("select-box", List.ListStyle.class);
-        SkinSkinStyles.pDefaultVertical = skin_skin.get("default-vertical", ProgressBar.ProgressBarStyle.class);
-        SkinSkinStyles.pDefaultHorizontal = skin_skin.get("default-horizontal", ProgressBar.ProgressBarStyle.class);
-        SkinSkinStyles.spSelectBox = skin_skin.get("select-box", ScrollPane.ScrollPaneStyle.class);
-        SkinSkinStyles.spDefault = skin_skin.get("default", ScrollPane.ScrollPaneStyle.class);
-        SkinSkinStyles.sbDefault = skin_skin.get("default", SelectBox.SelectBoxStyle.class);
-        SkinSkinStyles.sScrubber = skin_skin.get("scrubber", Slider.SliderStyle.class);
-        SkinSkinStyles.sDefaultVertical = skin_skin.get("default-vertical", Slider.SliderStyle.class);
-        SkinSkinStyles.sDefaultHorizontal = skin_skin.get("default-horizontal", Slider.SliderStyle.class);
-        SkinSkinStyles.spltDefaultVertical = skin_skin.get("default-vertical", SplitPane.SplitPaneStyle.class);
-        SkinSkinStyles.spltDefaultHorizontal = skin_skin.get("default-horizontal", SplitPane.SplitPaneStyle.class);
-        SkinSkinStyles.tbToggle = skin_skin.get("toggle", TextButton.TextButtonStyle.class);
-        SkinSkinStyles.tbDefault = skin_skin.get("default", TextButton.TextButtonStyle.class);
-        SkinSkinStyles.tfDefault = skin_skin.get("default", TextField.TextFieldStyle.class);
         SkinSkinStyles.ttDefault = skin_skin.get("default", TextTooltip.TextTooltipStyle.class);
-        SkinSkinStyles.tsDefault = skin_skin.get("default", Touchpad.TouchpadStyle.class);
-        SkinSkinStyles.tDefault = skin_skin.get("default", Tree.TreeStyle.class);
-        SkinSkinStyles.wDefault = skin_skin.get("default", Window.WindowStyle.class);
         sfx_chapter1 = assetManager.get("sfx/chapter1.mp3");
         sfx_chapter2 = assetManager.get("sfx/chapter2.mp3");
         sfx_chapter3 = assetManager.get("sfx/chapter3.mp3");
         sfx_chapter4 = assetManager.get("sfx/chapter4.mp3");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_conclusion = assetManager.get("sfx/conclusion.mp3");
-        sfx_gameover1 = assetManager.get("sfx/gameover1.mp3");
-        sfx_gameover2 = assetManager.get("sfx/gameover2.mp3");
-        sfx_gameover3 = assetManager.get("sfx/gameover3.mp3");
-        sfx_gameover4 = assetManager.get("sfx/gameover4.mp3");
-        sfx_gameover5 = assetManager.get("sfx/gameover5.mp3");
-        sfx_gameover6 = assetManager.get("sfx/gameover6.mp3");
         sfx_libgdx00 = assetManager.get("sfx/libgdx00.mp3");
         sfx_libgdx01 = assetManager.get("sfx/libgdx01.mp3");
         sfx_libgdx02 = assetManager.get("sfx/libgdx02.mp3");
@@ -384,6 +380,19 @@ public class Resources {
         sfx_themedHorror01 = assetManager.get("sfx/themed_horror01.mp3");
         sfx_themedHorror02 = assetManager.get("sfx/themed_horror02.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
+        bgm_gameover1 = assetManager.get("bgm/gameover1.mp3");
+        bgm_gameover2 = assetManager.get("bgm/gameover2.mp3");
+        bgm_gameover3 = assetManager.get("bgm/gameover3.mp3");
+        bgm_gameover4 = assetManager.get("bgm/gameover4.mp3");
+        bgm_gameover5 = assetManager.get("bgm/gameover5.mp3");
+        bgm_gameover6 = assetManager.get("bgm/gameover6.mp3");
+        bgm_gameoverbreathing = assetManager.get("bgm/gameoverbreathing.mp3");
+        bgm_gameovercry = assetManager.get("bgm/gameovercry.mp3");
+        bgm_gameoverlever = assetManager.get("bgm/gameoverlever.mp3");
+        bgm_gameovermeat = assetManager.get("bgm/gameovermeat.mp3");
+        bgm_gameoversaw = assetManager.get("bgm/gameoversaw.mp3");
+        bgm_gameoverscream = assetManager.get("bgm/gameoverscream.mp3");
+        bgm_gameovershot = assetManager.get("bgm/gameovershot.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
 
@@ -468,6 +477,10 @@ public class Resources {
 
         public static Animation animationNeedle04;
 
+        public static EventData eventBgmGameover4;
+
+        public static EventData eventBgmGameoverscream;
+
         public static BoneData boneRoot;
 
         public static BoneData boneGameGameOverSyringe;
@@ -500,6 +513,8 @@ public class Resources {
 
         public static AnimationStateData animationData;
 
+        public static Animation animationGoToPosition;
+
         public static Animation animationHurt00;
 
         public static Animation animationHurt01;
@@ -515,6 +530,12 @@ public class Resources {
         public static Animation animationSmack;
 
         public static Animation animationStand;
+
+        public static EventData eventBgmGameover2;
+
+        public static EventData eventBgmGameovermeat2;
+
+        public static EventData eventBgmGameoverscream2;
 
         public static BoneData boneRoot;
 
@@ -558,6 +579,12 @@ public class Resources {
 
         public static Animation animationStand;
 
+        public static EventData eventBgmGameover2;
+
+        public static EventData eventBgmGameoversaw;
+
+        public static EventData eventBgmGameoverscream;
+
         public static BoneData boneRoot;
 
         public static BoneData boneThigh;
@@ -594,6 +621,8 @@ public class Resources {
 
         public static Animation animationWiggle;
 
+        public static EventData eventBgmGameoverlever;
+
         public static BoneData boneRoot;
 
         public static BoneData boneRope;
@@ -629,6 +658,10 @@ public class Resources {
         public static Animation animationSlump;
 
         public static Animation animationWiggle;
+
+        public static EventData eventBgmGameover3;
+
+        public static EventData eventBgmGameovershot;
 
         public static BoneData boneRoot;
 
@@ -677,6 +710,8 @@ public class Resources {
         public static Animation animationAnimation04;
 
         public static Animation animationStand;
+
+        public static EventData eventBgmGameoverscream;
 
         public static BoneData boneRoot;
 
@@ -887,6 +922,44 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin skinDefault;
     }
 
+    public static class SpineSimon {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationBottom;
+
+        public static Animation animationBottomQuick;
+
+        public static Animation animationLeft;
+
+        public static Animation animationLeftQuick;
+
+        public static Animation animationRight;
+
+        public static Animation animationRightQuick;
+
+        public static Animation animationStand;
+
+        public static Animation animationTop;
+
+        public static Animation animationTopQuick;
+
+        public static BoneData boneRoot;
+
+        public static SlotData slotGameSimonBackground;
+
+        public static SlotData slotGameSimonBottom;
+
+        public static SlotData slotGameSimonLeft;
+
+        public static SlotData slotGameSimonRight;
+
+        public static SlotData slotGameSimonTop;
+
+        public static com.esotericsoftware.spine.Skin skinDefault;
+    }
+
     public static class SpineThemedHorror {
         public static SkeletonData skeletonData;
 
@@ -918,65 +991,9 @@ public class Resources {
     }
 
     public static class SkinSkinStyles {
-        public static Button.ButtonStyle bClose;
-
-        public static Button.ButtonStyle bDefault;
-
-        public static Button.ButtonStyle bPause;
-
-        public static Button.ButtonStyle bToggle;
-
-        public static Button.ButtonStyle bStop;
-
-        public static Button.ButtonStyle bPlay;
-
-        public static CheckBox.CheckBoxStyle cbDefault;
-
-        public static ImageButton.ImageButtonStyle ibDefault;
-
-        public static ImageTextButton.ImageTextButtonStyle itbDefault;
-
-        public static ImageTextButton.ImageTextButtonStyle itbRadio;
-
-        public static Label.LabelStyle lSmall;
-
         public static Label.LabelStyle lDefault;
 
-        public static List.ListStyle lstSelectBox;
-
-        public static ProgressBar.ProgressBarStyle pDefaultVertical;
-
-        public static ProgressBar.ProgressBarStyle pDefaultHorizontal;
-
-        public static ScrollPane.ScrollPaneStyle spSelectBox;
-
-        public static ScrollPane.ScrollPaneStyle spDefault;
-
-        public static SelectBox.SelectBoxStyle sbDefault;
-
-        public static Slider.SliderStyle sScrubber;
-
-        public static Slider.SliderStyle sDefaultVertical;
-
-        public static Slider.SliderStyle sDefaultHorizontal;
-
-        public static SplitPane.SplitPaneStyle spltDefaultVertical;
-
-        public static SplitPane.SplitPaneStyle spltDefaultHorizontal;
-
-        public static TextButton.TextButtonStyle tbToggle;
-
-        public static TextButton.TextButtonStyle tbDefault;
-
-        public static TextField.TextFieldStyle tfDefault;
-
         public static TextTooltip.TextTooltipStyle ttDefault;
-
-        public static Touchpad.TouchpadStyle tsDefault;
-
-        public static Tree.TreeStyle tDefault;
-
-        public static Window.WindowStyle wDefault;
     }
 
     public static class Values {

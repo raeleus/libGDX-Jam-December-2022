@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "zpP81fwM/Ek", "spine": "4.1.17", "width": 1024, "height": 610.8, "images": "", "audio": "" },
+"skeleton": { "hash": "sX/S4JrpCDc", "spine": "4.1.17", "width": 1024, "height": 610.8, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "rope", "parent": "root", "length": 547.77, "rotation": -89.27, "x": 544.23, "y": 571.19 },
@@ -58,6 +58,9 @@
 		}
 	}
 ],
+"events": {
+	"bgm/gameoverlever": { "audio": "bgm/gameoverlever.mp3" }
+},
 "animations": {
 	"death": {
 		"bones": {
@@ -123,7 +126,8 @@
 					{ "time": 1.7, "value": 0.81 },
 					{ "time": 1.8333, "value": -2.84 },
 					{ "time": 2, "value": 1.29 },
-					{ "time": 2.1667, "value": -0.52 }
+					{ "time": 2.1667, "value": -0.52, "curve": "stepped" },
+					{ "time": 3, "value": -0.52 }
 				]
 			}
 		},
@@ -143,7 +147,10 @@
 					}
 				}
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameoverlever" }
+		]
 	},
 	"wiggle": {
 		"bones": {

@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "QiTGPs2AuOY",
+	"hash": "PY6lwqEdW+Y",
 	"spine": "4.1.17",
 	"y": -281.38,
 	"width": 1249.72,
@@ -16,16 +16,7 @@
 	{ "name": "bone5", "parent": "bone4", "length": 43.66, "x": 43.66 },
 	{ "name": "bone6", "parent": "bone5", "length": 43.66, "x": 43.66 },
 	{ "name": "bone2", "parent": "bone6", "length": 212.71, "rotation": 0.55, "x": 43.66 },
-	{
-		"name": "game/game-over-bullet-hole",
-		"parent": "bone6",
-		"length": 25.39,
-		"rotation": -90.89,
-		"x": 4.48,
-		"y": -23.06,
-		"scaleX": 0,
-		"scaleY": 0
-	}
+	{ "name": "game/game-over-bullet-hole", "parent": "bone6", "length": 25.39, "rotation": -90.89, "x": 4.48, "y": -23.06 }
 ],
 "slots": [
 	{ "name": "white", "bone": "root", "attachment": "game/white" },
@@ -83,6 +74,10 @@
 		}
 	}
 ],
+"events": {
+	"bgm/gameover3": { "audio": "bgm/gameover3.mp3" },
+	"bgm/gameovershot": { "audio": "bgm/gameovershot.mp3" }
+},
 "animations": {
 	"slump": {
 		"slots": {
@@ -114,7 +109,8 @@
 				"rotate": [
 					{ "time": 0.2 },
 					{ "time": 0.3667, "value": 9.3 },
-					{ "time": 1.2 }
+					{ "time": 1.2, "curve": "stepped" },
+					{ "time": 2 }
 				]
 			},
 			"bone4": {
@@ -147,8 +143,9 @@
 			},
 			"game/game-over-bullet-hole": {
 				"scale": [
-					{ "time": 0.0667 },
-					{ "time": 0.5, "x": 100000, "y": 100000 }
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.0667, "x": 0, "y": 0 },
+					{ "time": 0.5 }
 				]
 			}
 		},
@@ -170,7 +167,10 @@
 					}
 				}
 			}
-		}
+		},
+		"events": [
+			{ "name": "bgm/gameovershot" }
+		]
 	},
 	"wiggle": {
 		"slots": {
@@ -219,6 +219,11 @@
 					{ "time": 1.5, "value": -0.34 },
 					{ "time": 1.9333, "value": -2.44 },
 					{ "time": 2.2333, "value": -2.83 }
+				]
+			},
+			"game/game-over-bullet-hole": {
+				"scale": [
+					{ "x": 0, "y": 0 }
 				]
 			}
 		},
