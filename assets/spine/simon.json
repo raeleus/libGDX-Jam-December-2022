@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "/qtL5lDvNis", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "OIffYiz0HS4", "spine": "4.1.17", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" }
 ],
@@ -8,12 +8,44 @@
 	{ "name": "game/simon-bottom", "bone": "root" },
 	{ "name": "game/simon-left", "bone": "root" },
 	{ "name": "game/simon-right", "bone": "root" },
-	{ "name": "game/simon-top", "bone": "root" }
+	{ "name": "game/simon-top", "bone": "root" },
+	{ "name": "bbox-right", "bone": "root", "attachment": "bbox-right" },
+	{ "name": "bbox-left", "bone": "root", "attachment": "bbox-left" },
+	{ "name": "bbox-top", "bone": "root", "attachment": "bbox-top" },
+	{ "name": "bbox-bottom", "bone": "root", "attachment": "bbox-bottom" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox-bottom": {
+				"bbox-bottom": {
+					"type": "boundingbox",
+					"vertexCount": 10,
+					"vertices": [ 397.51, 128.64, 488.01, 229.11, 509.49, 224.5, 529.43, 226.04, 551.67, 233.71, 647.54, 130.17, 586.18, 89.52, 532.49, 83.39, 478.81, 86.45, 429.72, 107.16 ]
+				}
+			},
+			"bbox-left": {
+				"bbox-left": {
+					"type": "boundingbox",
+					"vertexCount": 11,
+					"vertices": [ 357.63, 444.62, 448.9, 346.45, 441.23, 314.24, 444.3, 287.39, 460.4, 251.35, 373.74, 145.51, 335.39, 188.46, 313.15, 252.11, 306.25, 310.4, 315.45, 365.62, 338.46, 413.94 ]
+				}
+			},
+			"bbox-right": {
+				"bbox-right": {
+					"type": "boundingbox",
+					"vertexCount": 10,
+					"vertices": [ 579.12, 249.86, 595.78, 280.24, 602.64, 318.96, 594.8, 347.88, 686.94, 444.42, 713.89, 390.51, 723.69, 315.04, 717.81, 249.86, 695.27, 188.11, 667.33, 146.94 ]
+				}
+			},
+			"bbox-top": {
+				"bbox-top": {
+					"type": "boundingbox",
+					"vertexCount": 11,
+					"vertices": [ 471.91, 370.22, 376.8, 467.63, 425.89, 505.21, 482.64, 528.98, 530.96, 538.18, 581.58, 531.28, 621.46, 512.11, 666.71, 474.53, 570.07, 374.06, 540.16, 389.4, 512.55, 388.63 ]
+				}
+			},
 			"game/simon-background": {
 				"game/simon-background": { "x": 512, "y": 288, "width": 1024, "height": 576 }
 			},
@@ -32,16 +64,26 @@
 		}
 	}
 ],
+"events": {
+	"sfx/chime": { "audio": "sfx/chime.mp3" },
+	"sfx/piano": { "audio": "sfx/piano.mp3" },
+	"sfx/string": { "audio": "sfx/string.mp3" },
+	"sfx/violin": { "audio": "sfx/violin.mp3" }
+},
 "animations": {
 	"bottom": {
 		"slots": {
 			"game/simon-bottom": {
 				"attachment": [
 					{ "name": "game/simon-bottom" },
-					{ "time": 0.6667 }
+					{ "time": 0.6667 },
+					{ "time": 1 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/chime" }
+		]
 	},
 	"bottom-quick": {
 		"slots": {
@@ -51,17 +93,83 @@
 					{ "time": 0.1667 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/chime" }
+		]
+	},
+	"intro": {
+		"slots": {
+			"game/simon-bottom": {
+				"attachment": [
+					{ "time": 0.6667, "name": "game/simon-bottom" },
+					{ "time": 1.3333 },
+					{ "time": 3.4667, "name": "game/simon-bottom" },
+					{ "time": 3.7 },
+					{ "time": 3.9, "name": "game/simon-bottom" },
+					{ "time": 4.1 },
+					{ "time": 4.3333, "name": "game/simon-bottom" },
+					{ "time": 4.5333 },
+					{ "time": 5.7 }
+				]
+			},
+			"game/simon-left": {
+				"attachment": [
+					{ "time": 1.3333, "name": "game/simon-left" },
+					{ "time": 2.0333 },
+					{ "time": 3.4667, "name": "game/simon-left" },
+					{ "time": 3.7 },
+					{ "time": 3.9, "name": "game/simon-left" },
+					{ "time": 4.1 },
+					{ "time": 4.3333, "name": "game/simon-left" },
+					{ "time": 4.5333 }
+				]
+			},
+			"game/simon-right": {
+				"attachment": [
+					{ "time": 2.7, "name": "game/simon-right" },
+					{ "time": 3.2667 },
+					{ "time": 3.4667, "name": "game/simon-right" },
+					{ "time": 3.7 },
+					{ "time": 3.9, "name": "game/simon-right" },
+					{ "time": 4.1 },
+					{ "time": 4.3333, "name": "game/simon-right" },
+					{ "time": 4.5333 }
+				]
+			},
+			"game/simon-top": {
+				"attachment": [
+					{ "time": 2.0333, "name": "game/simon-top" },
+					{ "time": 2.7 },
+					{ "time": 3.4667, "name": "game/simon-top" },
+					{ "time": 3.7 },
+					{ "time": 3.9, "name": "game/simon-top" },
+					{ "time": 4.1 },
+					{ "time": 4.3333, "name": "game/simon-top" },
+					{ "time": 4.5333 }
+				]
+			}
+		},
+		"events": [
+			{ "time": 0.6667, "name": "sfx/chime" },
+			{ "time": 1.3333, "name": "sfx/piano" },
+			{ "time": 2.0333, "name": "sfx/violin" },
+			{ "time": 2.7, "name": "sfx/string" }
+		]
 	},
 	"left": {
 		"slots": {
 			"game/simon-left": {
 				"attachment": [
 					{ "name": "game/simon-left" },
-					{ "time": 0.6667 }
+					{ "time": 0.6667 },
+					{ "time": 1 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/piano" }
+		]
 	},
 	"left-quick": {
 		"slots": {
@@ -71,17 +179,24 @@
 					{ "time": 0.1667 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/piano" }
+		]
 	},
 	"right": {
 		"slots": {
 			"game/simon-right": {
 				"attachment": [
 					{ "name": "game/simon-right" },
-					{ "time": 0.6667 }
+					{ "time": 0.6667 },
+					{ "time": 1 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/string" }
+		]
 	},
 	"right-quick": {
 		"slots": {
@@ -91,7 +206,10 @@
 					{ "time": 0.1667 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/string" }
+		]
 	},
 	"stand": {
 		"slots": {
@@ -107,10 +225,14 @@
 			"game/simon-top": {
 				"attachment": [
 					{ "name": "game/simon-top" },
-					{ "time": 0.6667 }
+					{ "time": 0.6667 },
+					{ "time": 1 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/violin" }
+		]
 	},
 	"top-quick": {
 		"slots": {
@@ -120,7 +242,10 @@
 					{ "time": 0.1667 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/violin" }
+		]
 	}
 }
 }

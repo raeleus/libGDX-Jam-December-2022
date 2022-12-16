@@ -28,9 +28,13 @@ public class Resources {
 
     public static Sound sfx_chapter4;
 
+    public static Sound sfx_chime;
+
     public static Sound sfx_click;
 
     public static Sound sfx_conclusion;
+
+    public static Sound sfx_horn;
 
     public static Sound sfx_libgdx00;
 
@@ -38,15 +42,21 @@ public class Resources {
 
     public static Sound sfx_libgdx02;
 
+    public static Sound sfx_piano;
+
     public static Sound sfx_raeleus00;
 
     public static Sound sfx_raeleus01;
+
+    public static Sound sfx_string;
 
     public static Sound sfx_themedHorror00;
 
     public static Sound sfx_themedHorror01;
 
     public static Sound sfx_themedHorror02;
+
+    public static Sound sfx_violin;
 
     public static Music bgm_audioSample;
 
@@ -334,6 +344,7 @@ public class Resources {
         SpineSimon.animationData = assetManager.get("spine/simon.json-animation");
         SpineSimon.animationBottom = SpineSimon.skeletonData.findAnimation("bottom");
         SpineSimon.animationBottomQuick = SpineSimon.skeletonData.findAnimation("bottom-quick");
+        SpineSimon.animationIntro = SpineSimon.skeletonData.findAnimation("intro");
         SpineSimon.animationLeft = SpineSimon.skeletonData.findAnimation("left");
         SpineSimon.animationLeftQuick = SpineSimon.skeletonData.findAnimation("left-quick");
         SpineSimon.animationRight = SpineSimon.skeletonData.findAnimation("right");
@@ -341,12 +352,20 @@ public class Resources {
         SpineSimon.animationStand = SpineSimon.skeletonData.findAnimation("stand");
         SpineSimon.animationTop = SpineSimon.skeletonData.findAnimation("top");
         SpineSimon.animationTopQuick = SpineSimon.skeletonData.findAnimation("top-quick");
+        SpineSimon.eventSfxChime = SpineSimon.skeletonData.findEvent("sfx/chime");
+        SpineSimon.eventSfxPiano = SpineSimon.skeletonData.findEvent("sfx/piano");
+        SpineSimon.eventSfxString = SpineSimon.skeletonData.findEvent("sfx/string");
+        SpineSimon.eventSfxViolin = SpineSimon.skeletonData.findEvent("sfx/violin");
         SpineSimon.boneRoot = SpineSimon.skeletonData.findBone("root");
         SpineSimon.slotGameSimonBackground = SpineSimon.skeletonData.findSlot("game/simon-background");
         SpineSimon.slotGameSimonBottom = SpineSimon.skeletonData.findSlot("game/simon-bottom");
         SpineSimon.slotGameSimonLeft = SpineSimon.skeletonData.findSlot("game/simon-left");
         SpineSimon.slotGameSimonRight = SpineSimon.skeletonData.findSlot("game/simon-right");
         SpineSimon.slotGameSimonTop = SpineSimon.skeletonData.findSlot("game/simon-top");
+        SpineSimon.slotBboxRight = SpineSimon.skeletonData.findSlot("bbox-right");
+        SpineSimon.slotBboxLeft = SpineSimon.skeletonData.findSlot("bbox-left");
+        SpineSimon.slotBboxTop = SpineSimon.skeletonData.findSlot("bbox-top");
+        SpineSimon.slotBboxBottom = SpineSimon.skeletonData.findSlot("bbox-bottom");
         SpineSimon.skinDefault = SpineSimon.skeletonData.findSkin("default");
         SpineThemedHorror.skeletonData = assetManager.get("spine/themed-horror.json");
         SpineThemedHorror.animationData = assetManager.get("spine/themed-horror.json-animation");
@@ -369,16 +388,21 @@ public class Resources {
         sfx_chapter2 = assetManager.get("sfx/chapter2.mp3");
         sfx_chapter3 = assetManager.get("sfx/chapter3.mp3");
         sfx_chapter4 = assetManager.get("sfx/chapter4.mp3");
+        sfx_chime = assetManager.get("sfx/chime.mp3");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_conclusion = assetManager.get("sfx/conclusion.mp3");
+        sfx_horn = assetManager.get("sfx/horn.mp3");
         sfx_libgdx00 = assetManager.get("sfx/libgdx00.mp3");
         sfx_libgdx01 = assetManager.get("sfx/libgdx01.mp3");
         sfx_libgdx02 = assetManager.get("sfx/libgdx02.mp3");
+        sfx_piano = assetManager.get("sfx/piano.mp3");
         sfx_raeleus00 = assetManager.get("sfx/raeleus00.mp3");
         sfx_raeleus01 = assetManager.get("sfx/raeleus01.mp3");
+        sfx_string = assetManager.get("sfx/string.mp3");
         sfx_themedHorror00 = assetManager.get("sfx/themed_horror00.mp3");
         sfx_themedHorror01 = assetManager.get("sfx/themed_horror01.mp3");
         sfx_themedHorror02 = assetManager.get("sfx/themed_horror02.mp3");
+        sfx_violin = assetManager.get("sfx/violin.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_gameover1 = assetManager.get("bgm/gameover1.mp3");
         bgm_gameover2 = assetManager.get("bgm/gameover2.mp3");
@@ -931,6 +955,8 @@ public class Resources {
 
         public static Animation animationBottomQuick;
 
+        public static Animation animationIntro;
+
         public static Animation animationLeft;
 
         public static Animation animationLeftQuick;
@@ -945,6 +971,14 @@ public class Resources {
 
         public static Animation animationTopQuick;
 
+        public static EventData eventSfxChime;
+
+        public static EventData eventSfxPiano;
+
+        public static EventData eventSfxString;
+
+        public static EventData eventSfxViolin;
+
         public static BoneData boneRoot;
 
         public static SlotData slotGameSimonBackground;
@@ -956,6 +990,14 @@ public class Resources {
         public static SlotData slotGameSimonRight;
 
         public static SlotData slotGameSimonTop;
+
+        public static SlotData slotBboxRight;
+
+        public static SlotData slotBboxLeft;
+
+        public static SlotData slotBboxTop;
+
+        public static SlotData slotBboxBottom;
 
         public static com.esotericsoftware.spine.Skin skinDefault;
     }
