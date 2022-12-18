@@ -12,6 +12,38 @@
 		"a": 1
 	}
 },
+"com.ray3k.tenpatch.TenPatchDrawable": {
+	"gas": {
+		"region": "gas-01",
+		"horizontalStretchAreas": [ 0, 12 ],
+		"verticalStretchAreas": [ 0, 12 ],
+		"tiling": false,
+		"minWidth": 13,
+		"minHeight": 13,
+		"rightWidth": 0,
+		"leftWidth": 0,
+		"bottomHeight": 0,
+		"topHeight": 0,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [
+			"gas-01",
+			"gas-02",
+			"gas-03",
+			"gas-04",
+			"gas-05",
+			"gas-06",
+			"gas-07",
+			"gas-08",
+			"gas-09"
+		],
+		"playMode": 2,
+		"crushMode": 0
+	}
+},
 "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
 	"default": {
 		"font": "font"

@@ -7,7 +7,6 @@ spine/game-over-noose.json
 spine/game-over-shoot.json
 spine/game-over-tooth.json
 spine/libgdx.json
-spine/ms-fart.json
 spine/ray3k.json
 spine/santa-head-old.json
 spine/santa-head.json

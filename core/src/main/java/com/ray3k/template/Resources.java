@@ -30,9 +30,19 @@ public class Resources {
 
     public static Sound sfx_chime;
 
+    public static Sound sfx_chord;
+
+    public static Sound sfx_clear;
+
     public static Sound sfx_click;
 
     public static Sound sfx_conclusion;
+
+    public static Sound sfx_flagRemove;
+
+    public static Sound sfx_flag;
+
+    public static Sound sfx_highlight;
 
     public static Sound sfx_horn;
 
@@ -48,6 +58,8 @@ public class Resources {
 
     public static Sound sfx_raeleus01;
 
+    public static Sound sfx_reset;
+
     public static Sound sfx_string;
 
     public static Sound sfx_themedHorror00;
@@ -56,7 +68,11 @@ public class Resources {
 
     public static Sound sfx_themedHorror02;
 
+    public static Sound sfx_timerTick;
+
     public static Sound sfx_violin;
+
+    public static Sound sfx_winSound;
 
     public static Music bgm_audioSample;
 
@@ -278,13 +294,6 @@ public class Resources {
         SpineLibgdx.slotBlood = SpineLibgdx.skeletonData.findSlot("blood");
         SpineLibgdx.slotLogoLibgdxExplosion01 = SpineLibgdx.skeletonData.findSlot("logo/libgdx_explosion-01");
         SpineLibgdx.skinDefault = SpineLibgdx.skeletonData.findSkin("default");
-        SpineMsFart.skeletonData = assetManager.get("spine/ms-fart.json");
-        SpineMsFart.animationData = assetManager.get("spine/ms-fart.json-animation");
-        SpineMsFart.animationAnimation = SpineMsFart.skeletonData.findAnimation("animation");
-        SpineMsFart.boneRoot = SpineMsFart.skeletonData.findBone("root");
-        SpineMsFart.slotGameGas = SpineMsFart.skeletonData.findSlot("game/gas");
-        SpineMsFart.slotGameGas01 = SpineMsFart.skeletonData.findSlot("game/gas-01");
-        SpineMsFart.skinDefault = SpineMsFart.skeletonData.findSkin("default");
         SpineRay3k.skeletonData = assetManager.get("spine/ray3k.json");
         SpineRay3k.animationData = assetManager.get("spine/ray3k.json-animation");
         SpineRay3k.animationAnimation = SpineRay3k.skeletonData.findAnimation("animation");
@@ -389,8 +398,13 @@ public class Resources {
         sfx_chapter3 = assetManager.get("sfx/chapter3.mp3");
         sfx_chapter4 = assetManager.get("sfx/chapter4.mp3");
         sfx_chime = assetManager.get("sfx/chime.mp3");
+        sfx_chord = assetManager.get("sfx/chord.mp3");
+        sfx_clear = assetManager.get("sfx/clear.mp3");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_conclusion = assetManager.get("sfx/conclusion.mp3");
+        sfx_flagRemove = assetManager.get("sfx/flag remove.mp3");
+        sfx_flag = assetManager.get("sfx/flag.mp3");
+        sfx_highlight = assetManager.get("sfx/highlight.mp3");
         sfx_horn = assetManager.get("sfx/horn.mp3");
         sfx_libgdx00 = assetManager.get("sfx/libgdx00.mp3");
         sfx_libgdx01 = assetManager.get("sfx/libgdx01.mp3");
@@ -398,11 +412,14 @@ public class Resources {
         sfx_piano = assetManager.get("sfx/piano.mp3");
         sfx_raeleus00 = assetManager.get("sfx/raeleus00.mp3");
         sfx_raeleus01 = assetManager.get("sfx/raeleus01.mp3");
+        sfx_reset = assetManager.get("sfx/reset.mp3");
         sfx_string = assetManager.get("sfx/string.mp3");
         sfx_themedHorror00 = assetManager.get("sfx/themed_horror00.mp3");
         sfx_themedHorror01 = assetManager.get("sfx/themed_horror01.mp3");
         sfx_themedHorror02 = assetManager.get("sfx/themed_horror02.mp3");
+        sfx_timerTick = assetManager.get("sfx/timer tick.mp3");
         sfx_violin = assetManager.get("sfx/violin.mp3");
+        sfx_winSound = assetManager.get("sfx/win sound.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_gameover1 = assetManager.get("bgm/gameover1.mp3");
         bgm_gameover2 = assetManager.get("bgm/gameover2.mp3");
@@ -810,22 +827,6 @@ public class Resources {
         public static SlotData slotBlood;
 
         public static SlotData slotLogoLibgdxExplosion01;
-
-        public static com.esotericsoftware.spine.Skin skinDefault;
-    }
-
-    public static class SpineMsFart {
-        public static SkeletonData skeletonData;
-
-        public static AnimationStateData animationData;
-
-        public static Animation animationAnimation;
-
-        public static BoneData boneRoot;
-
-        public static SlotData slotGameGas;
-
-        public static SlotData slotGameGas01;
 
         public static com.esotericsoftware.spine.Skin skinDefault;
     }

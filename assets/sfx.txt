@@ -3,8 +3,13 @@ sfx/chapter2.mp3
 sfx/chapter3.mp3
 sfx/chapter4.mp3
 sfx/chime.mp3
+sfx/chord.mp3
+sfx/clear.mp3
 sfx/click.mp3
 sfx/conclusion.mp3
+sfx/flag remove.mp3
+sfx/flag.mp3
+sfx/highlight.mp3
 sfx/horn.mp3
 sfx/libgdx00.mp3
 sfx/libgdx01.mp3
@@ -12,8 +17,11 @@ sfx/libgdx02.mp3
 sfx/piano.mp3
 sfx/raeleus00.mp3
 sfx/raeleus01.mp3
+sfx/reset.mp3
 sfx/string.mp3
 sfx/themed_horror00.mp3
 sfx/themed_horror01.mp3
 sfx/themed_horror02.mp3
+sfx/timer tick.mp3
 sfx/violin.mp3
+sfx/win sound.mp3

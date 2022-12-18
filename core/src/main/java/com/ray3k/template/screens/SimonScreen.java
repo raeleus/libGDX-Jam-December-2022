@@ -22,10 +22,11 @@ import com.esotericsoftware.spine.utils.SkeletonDrawable;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.SpineSimon.*;
 
 public class SimonScreen extends JamScreen {
-    private Stage stage;
+    protected Stage stage;
     private Array<SpineDrawable> spineDrawables;
     private final static Color BG_COLOR = new Color(Color.BLACK);
     private ObjectSet<Sound> sounds;
@@ -47,6 +48,7 @@ public class SimonScreen extends JamScreen {
     private Image image;
     private boolean failed;
     private int counter = 1;
+    protected int countMax = 5;
     
     @Override
     public void show() {
@@ -109,7 +111,7 @@ public class SimonScreen extends JamScreen {
         var current = state.getCurrent(0).getAnimation();
         if (mode == Mode.CPU) {
             if (current == animationStand) {
-                if (cpuCommands.size > 0) {
+                if (cpuCommands.size > 0 && counter <= countMax) {
                     switch (cpuCommands.first()) {
                         case UP:
                             state.setAnimation(0, animationTop, false);
@@ -144,9 +146,9 @@ public class SimonScreen extends JamScreen {
     
             if (playerCommands.size > 0) {
                 if (playerCommands.first() != levelCommands.first()) {
-                    Resources.sfx_horn.play();
+                    sfx_horn.play();
                     failed = true;
-                    stage.addAction(Actions.sequence(Actions.delay(7), Actions.run(() -> core.transition(new SplashScreen()))));
+                    gameOverEvent();
                 } else {
                     cpuCommands.add(levelCommands.first());
                     levelCommands.removeIndex(0);
@@ -171,6 +173,10 @@ public class SimonScreen extends JamScreen {
                         counter++;
                         generateCommand();
                         mode = Mode.CPU;
+                    }
+                    
+                    if (counter > countMax) {
+                        winEvent();
                     }
                 }
             }
@@ -222,5 +228,14 @@ public class SimonScreen extends JamScreen {
     @Override
     public void dispose() {
     
+    }
+    
+    protected void winEvent() {
+        stage.addAction(Actions.sequence(Actions.delay(.5f), Actions.run(() -> sfx_winSound.play())));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+    }
+    
+    protected void gameOverEvent() {
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
     }
 }
