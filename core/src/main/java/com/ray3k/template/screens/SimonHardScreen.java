@@ -8,13 +8,15 @@ import static com.ray3k.template.Resources.*;
 public class SimonHardScreen extends SimonScreen {
     public SimonHardScreen() {
         countMax = 12;
+        progressIndex = 5;
     }
+    
     protected void winEvent() {
         stage.addAction(Actions.sequence(Actions.delay(.5f), Actions.run(() -> sfx_winSound.play())));
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new MinesweeperScreen()))));
     }
     
     protected void gameOverEvent() {
-        stage.addAction(Actions.sequence(Actions.delay(7), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
 }

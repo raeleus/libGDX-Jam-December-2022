@@ -76,6 +76,8 @@ public class Resources {
 
     public static Music bgm_audioSample;
 
+    public static Music bgm_disco;
+
     public static Music bgm_gameover1;
 
     public static Music bgm_gameover2;
@@ -421,6 +423,7 @@ public class Resources {
         sfx_violin = assetManager.get("sfx/violin.mp3");
         sfx_winSound = assetManager.get("sfx/win sound.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
+        bgm_disco = assetManager.get("bgm/disco.ogg");
         bgm_gameover1 = assetManager.get("bgm/gameover1.mp3");
         bgm_gameover2 = assetManager.get("bgm/gameover2.mp3");
         bgm_gameover3 = assetManager.get("bgm/gameover3.mp3");

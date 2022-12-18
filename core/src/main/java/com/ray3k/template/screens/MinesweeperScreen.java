@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -46,11 +47,14 @@ public class MinesweeperScreen extends JamScreen {
     protected int width = 30;
     protected int height = 16;
     protected int bombs = 99;
+    protected int progressIndex = 6;
+    protected boolean showTutorial;
     
     @Override
     public void show() {
         super.show();
         
+        core.progress = progressIndex;
         viewport = new ScreenViewport();
         stage = new Stage(viewport);
         Gdx.input.setInputProcessor(stage);
@@ -86,6 +90,14 @@ public class MinesweeperScreen extends JamScreen {
         sweeperTable = new Table();
         root.add(sweeperTable);
         
+        if (showTutorial) {
+            root.row();
+            var label = new Label("Left Click to reveal a present.\nThe numbers indicate how many bad presents are in the 8 touching squares.\nRight Click to place a flag where you think a bad present is.\nPress Left Click + Right Click (or just Middle Click) to auto reveal presents from a satisfied square.\nWatch out for the timer!", skin);
+            label.setColor(Color.BLACK);
+            label.setAlignment(Align.center);
+            root.add(label).padTop(20);
+        }
+        
         totalCells = width * height;
         
         generateGrid(width, height, bombs);
@@ -109,13 +121,12 @@ public class MinesweeperScreen extends JamScreen {
                     if (actor instanceof Image && actor.getUserObject() != null && actor.getUserObject() instanceof MScell) {
                         var cell = (MScell) actor.getUserObject();
                         highlightChordCells(cell);
-                        sfx_highlight.play();
                     }
                 } else if (Gdx.input.isButtonPressed(Buttons.LEFT) && !Gdx.input.isButtonPressed(Buttons.RIGHT)) {
                     if (actor instanceof Image && actor.getUserObject() != null && actor.getUserObject() instanceof MScell) {
                         var cell = (MScell) actor.getUserObject();
                         highlightCell(cell);
-                        sfx_highlight.play();
+                        if (!cell.cleared) sfx_highlight.play();
                     }
                 }
                 MinesweeperScreen.this.santaImage.setDrawable(skin, "ms-santa-o");
@@ -136,7 +147,6 @@ public class MinesweeperScreen extends JamScreen {
     
                     if (!began) {
                         while (cell.state == CellState.BOMB) {
-                            System.out.println("wow");
                             generateGrid(width, height, bombs);
                             resetPresents();
                             cell = grid[cell.row][cell.column];
@@ -395,20 +405,20 @@ public class MinesweeperScreen extends JamScreen {
         //clear left 3
         if (column - 1 >= 0) {
             var testCell = grid[row][column - 1];
-            if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+            if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                 clearCell(testCell);
                 playSound = true;
             }
             if (row - 1 >= 0) {
                 testCell = grid[row - 1][column - 1];
-                if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+                if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                     clearCell(testCell);
                     playSound = true;
                 }
             }
             if (row + 1 < grid.length) {
                 testCell = grid[row + 1][column - 1];
-                if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+                if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                     clearCell(testCell);
                     playSound = true;
                 }
@@ -418,20 +428,20 @@ public class MinesweeperScreen extends JamScreen {
         //clear right 3
         if (column + 1 < grid[row].length) {
             var testCell = grid[row][column + 1];
-            if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+            if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                 clearCell(testCell);
                 playSound = true;
             }
             if (row - 1 >= 0) {
                 testCell = grid[row - 1][column + 1];
-                if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+                if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                     clearCell(testCell);
                     playSound = true;
                 }
             }
             if (row + 1 < grid.length) {
                 testCell = grid[row + 1][column + 1];
-                if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+                if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                     clearCell(testCell);
                     playSound = true;
                 }
@@ -441,7 +451,7 @@ public class MinesweeperScreen extends JamScreen {
         //clear above
         if (row - 1 >= 0) {
             var testCell = grid[row - 1][column];
-            if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+            if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                 clearCell(testCell);
                 playSound = true;
             }
@@ -450,7 +460,7 @@ public class MinesweeperScreen extends JamScreen {
         //clear below
         if (row + 1 < grid.length) {
             var testCell = grid[row + 1][column];
-            if (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB) {
+            if (testCell.state == CellState.CLEAR && !testCell.cleared || testCell.state == CellState.BOMB) {
                 clearCell(testCell);
                 playSound = true;
             }
@@ -484,32 +494,51 @@ public class MinesweeperScreen extends JamScreen {
         if (!cell.cleared) return;
         var column = cell.column;
         var row = cell.row;
+        var highlighted = false;
         
         //clear left 3
         if (column - 1 >= 0) {
             var testCell = grid[row][column - 1];
-            if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+            if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                testCell.image.setDrawable(skin, "ms-cell-highlight");
+                highlighted = true;
+            }
             if (row - 1 >= 0) {
                 testCell = grid[row - 1][column - 1];
-                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                    testCell.image.setDrawable(skin, "ms-cell-highlight");
+                    highlighted = true;
+                }
             }
             if (row + 1 < grid.length) {
                 testCell = grid[row + 1][column - 1];
-                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                    testCell.image.setDrawable(skin, "ms-cell-highlight");
+                    highlighted = true;
+                }
             }
         }
     
         //clear right 3
         if (column + 1 < grid[row].length) {
             var testCell = grid[row][column + 1];
-            if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+            if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                testCell.image.setDrawable(skin, "ms-cell-highlight");
+                highlighted = true;
+            }
             if (row - 1 >= 0) {
                 testCell = grid[row - 1][column + 1];
-                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                    testCell.image.setDrawable(skin, "ms-cell-highlight");
+                    highlighted = true;
+                }
             }
             if (row + 1 < grid.length) {
                 testCell = grid[row + 1][column + 1];
-                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+                if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) {
+                    testCell.image.setDrawable(skin, "ms-cell-highlight");
+                    highlighted = true;
+                }
             }
         }
     
@@ -523,6 +552,10 @@ public class MinesweeperScreen extends JamScreen {
         if (row + 1 < grid.length) {
             var testCell = grid[row + 1][column];
             if (!testCell.cleared && (testCell.state == CellState.CLEAR || testCell.state == CellState.BOMB)) testCell.image.setDrawable(skin, "ms-cell-highlight");
+        }
+        
+        if (highlighted) {
+            sfx_highlight.play();
         }
     }
     
@@ -541,12 +574,12 @@ public class MinesweeperScreen extends JamScreen {
     
     protected void gameOverEvent() {
         sfx_horn.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
     
     protected void winEvent() {
         sfx_winSound.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new ConclusionScreen()))));
     }
     
     @Override

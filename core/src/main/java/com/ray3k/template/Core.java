@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.SkinLoader.SkinParameter;
 import com.badlogic.gdx.audio.Music;
@@ -87,6 +88,58 @@ public class Core extends JamGame {
     public static ShapeDrawer shapeDrawer;
     public static Transition defaultTransition;
     public static float defaultTransitionDuration;
+    
+    public int progress;
+    public int gameOverScreen;
+    
+    public void gameOverTransition() {
+        gameOverScreen++;
+        if (gameOverScreen > 6) gameOverScreen = 1;
+        
+        switch (gameOverScreen) {
+            case 1:
+                transition(new GameOver1Screen());
+                break;
+            case 2:
+                transition(new GameOver2Screen());
+                break;
+            case 3:
+                transition(new GameOver3Screen());
+                break;
+            case 4:
+                transition(new GameOver4Screen());
+                break;
+            case 5:
+                transition(new GameOver5Screen());
+                break;
+            case 6:
+                transition(new GameOver6Screen());
+                break;
+        }
+    }
+    
+    public void continueTransition() {
+        switch (progress) {
+            case 1:
+                transition(new SimonScreen());
+                break;
+            case 2:
+                transition(new MinesweeperEasyScreen());
+                break;
+            case 3:
+                transition(new SimonMediumScreen());
+                break;
+            case 4:
+                transition(new MinesweeperMediumScreen());
+                break;
+            case 5:
+                transition(new SimonHardScreen());
+                break;
+            case 6:
+                transition(new MinesweeperScreen());
+                break;
+        }
+    }
     
     public static boolean isKeyJustPressed(int key) {
         return key == Keys.ANY_KEY ? keysJustPressed.size > 0 : keysJustPressed.contains(key);

@@ -8,13 +8,14 @@ import static com.ray3k.template.Resources.*;
 public class SimonMediumScreen extends SimonScreen {
     public SimonMediumScreen() {
         countMax = 8;
+        progressIndex = 3;
     }
     protected void winEvent() {
         stage.addAction(Actions.sequence(Actions.delay(.5f), Actions.run(() -> sfx_winSound.play())));
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new MinesweeperMediumScreen()))));
     }
     
     protected void gameOverEvent() {
-        stage.addAction(Actions.sequence(Actions.delay(7), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
 }

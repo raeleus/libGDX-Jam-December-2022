@@ -12,17 +12,19 @@ public class MinesweeperEasyScreen extends MinesweeperScreen {
         width = 9;
         height = 9;
         bombs = 10;
+        progressIndex = 2;
+        showTutorial = true;
     }
     
     @Override
     protected void gameOverEvent() {
         sfx_horn.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
     
     @Override
     protected void winEvent() {
         sfx_winSound.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new Chapter3Screen()))));
     }
 }

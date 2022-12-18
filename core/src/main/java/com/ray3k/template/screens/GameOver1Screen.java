@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -71,7 +72,7 @@ public class GameOver1Screen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationHurt04) {
-                    core.transition(new SplashScreen());
+                    core.continueTransition();
                 }
             }
             
@@ -101,8 +102,10 @@ public class GameOver1Screen extends JamScreen {
             }
         });
         
-        bgm_gameoverbreathing.setLooping(true);
-        bgm_gameoverbreathing.play();
+//        stage.addAction(Actions.sequence(Actions.delay(8), Actions.run(() -> {
+//            bgm_gameoverbreathing.setLooping(true);
+//            bgm_gameoverbreathing.play();
+//        })));
     }
     
     @Override

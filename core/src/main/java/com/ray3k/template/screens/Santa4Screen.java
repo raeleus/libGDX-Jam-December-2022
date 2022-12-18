@@ -56,7 +56,7 @@ public class Santa4Screen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationSaySfxChapter4) {
-                    core.transition(new ConclusionScreen());
+                    core.transition(new SimonHardScreen());
                 }
             }
             
@@ -73,13 +73,13 @@ public class Santa4Screen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new ConclusionScreen());
+                core.transition(new SimonHardScreen());
                 return true;
             }
             
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new ConclusionScreen());
+                core.transition(new SimonHardScreen());
                 return true;
             }
         });

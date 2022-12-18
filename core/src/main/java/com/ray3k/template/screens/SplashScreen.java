@@ -20,6 +20,8 @@ public class SplashScreen extends JamScreen {
     public void show() {
         super.show();
         
+        core.progress = 0;
+        core.gameOverScreen = 0;
         stage = new Stage(new ScreenViewport(), batch);
         Gdx.input.setInputProcessor(stage);
         
@@ -37,7 +39,7 @@ public class SplashScreen extends JamScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.input.setInputProcessor(null);
-                core.transition(new SimonMediumScreen());
+                core.transition(new MinesweeperEasyScreen());
             }
         });
     }

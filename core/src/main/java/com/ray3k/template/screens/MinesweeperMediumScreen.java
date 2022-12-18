@@ -11,17 +11,18 @@ public class MinesweeperMediumScreen extends MinesweeperScreen {
         width = 16;
         height = 16;
         bombs = 40;
+        progressIndex = 4;
     }
     
     @Override
     protected void gameOverEvent() {
         sfx_horn.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
     
     @Override
     protected void winEvent() {
         sfx_winSound.play();
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new Chapter4Screen()))));
     }
 }

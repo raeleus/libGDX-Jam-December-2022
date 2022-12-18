@@ -1,4 +1,5 @@
 bgm/audio-sample.mp3
+bgm/disco.ogg
 bgm/gameover1.mp3
 bgm/gameover2.mp3
 bgm/gameover3.mp3

@@ -49,11 +49,13 @@ public class SimonScreen extends JamScreen {
     private boolean failed;
     private int counter = 1;
     protected int countMax = 5;
+    protected int progressIndex = 1;
     
     @Override
     public void show() {
         super.show();
-        
+    
+        core.progress = progressIndex;
         spineDrawables = new Array<>();
         sounds = new ObjectSet<>();
     
@@ -232,10 +234,10 @@ public class SimonScreen extends JamScreen {
     
     protected void winEvent() {
         stage.addAction(Actions.sequence(Actions.delay(.5f), Actions.run(() -> sfx_winSound.play())));
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new Chapter2Screen()))));
     }
     
     protected void gameOverEvent() {
-        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.transition(new SplashScreen()))));
+        stage.addAction(Actions.sequence(Actions.delay(5), Actions.run(() -> core.gameOverTransition())));
     }
 }

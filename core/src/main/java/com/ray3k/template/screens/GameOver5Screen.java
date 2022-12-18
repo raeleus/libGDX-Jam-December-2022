@@ -70,7 +70,7 @@ public class GameOver5Screen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationAnimation04) {
-                    core.transition(new SplashScreen());
+                    core.continueTransition();
                 }
             }
             
@@ -102,8 +102,8 @@ public class GameOver5Screen extends JamScreen {
             }
         });
         
-        bgm_gameoverbreathing.setLooping(true);
-        bgm_gameoverbreathing.play();
+//        bgm_gameoverbreathing.setLooping(true);
+//        bgm_gameoverbreathing.play();
         bgm_gameover5.play();
     }
     
